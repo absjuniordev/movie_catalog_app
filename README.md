@@ -1,16 +1,7 @@
-# movie_catolog_app
+Movie catalog app
 
-A new Flutter project.
+This app realized
 
-## Getting Started
+Este aplicativo mostrará ao usuário as principais indicações para filmes. E nele será possível verificar pontuação e sinopse. Neste app também poderemos favoritar alguns filmes e realizar navegações bem legais!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This application will show the user the main indications for movies. And in it will be possible to check punctuation and synopsis. In this app we will also be able to favorite some movies and make very cool navigations!
