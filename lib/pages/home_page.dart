@@ -23,18 +23,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ValueListenableBuilder<Movies?>(
-      //movies sera quem iremos observar
-      valueListenable: _controller.movies,
-      builder: (_, movies, __) {
-        return movies != null
-            ? ListView.builder(
-                itemCount: movies.listOfMovies!.length,
-                itemBuilder: (_, idx) =>
-                    Text(movies.listOfMovies![idx].title.toString()),
-              )
-            : Container();
-      },
-    ));
+      body: ValueListenableBuilder<Movies?>(
+        //movies sera quem iremos observar
+        valueListenable: _controller.movies,
+        builder: (_, movies, __) {
+          return movies != null
+              ? ListView.builder(
+                  itemCount: movies.listOfMovies!.length,
+                  itemBuilder: (_, idx) =>
+                      Text(movies.listOfMovies![idx].title.toString()),
+                )
+              : Container(
+                  child: Text('falhou'),
+                );
+        },
+      ),
+    );
   }
 }
