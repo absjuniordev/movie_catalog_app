@@ -26,12 +26,15 @@ class DetailsPage extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.height,
                 height: MediaQuery.of(context).size.height * .55,
-                child: Image.network(
-                  API.REQUEST_IMG(movie.posterPath.toString()),
-                  loadingBuilder: (_, child, progress) {
-                    if (progress == null) return child;
-                    return const CircularProgressIndicator.adaptive();
-                  },
+                child: Hero(
+                  tag: movie.id!,
+                  child: Image.network(
+                    API.REQUEST_IMG(movie.posterPath.toString()),
+                    loadingBuilder: (_, child, progress) {
+                      if (progress == null) return child;
+                      return const CircularProgressIndicator.adaptive();
+                    },
+                  ),
                 ),
               ),
               const SizedBox(height: 20),

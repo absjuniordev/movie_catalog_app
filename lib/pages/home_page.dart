@@ -37,8 +37,10 @@ class _HomePageState extends State<HomePage> {
                 builder: (__, movies, _) {
                   return Visibility(
                     visible: movies != null,
-                    child: Text('Movies',
-                        style: Theme.of(context).textTheme.headlineMedium),
+                    child: Text(
+                      'Movies',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
                   );
                 },
               ),
