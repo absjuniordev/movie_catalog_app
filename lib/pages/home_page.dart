@@ -3,8 +3,7 @@ import 'package:movie_catolog_app/controllers/movie_controller.dart';
 import 'package:movie_catolog_app/models/movies_page.dart';
 import 'package:movie_catolog_app/repositories/movies_repository_imp.dart';
 import 'package:movie_catolog_app/services/dio_service_imp.dart';
-
-import '../utils/apis.utilis.dart';
+import '../widgets/cusotm_listt_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,11 +45,8 @@ class _HomePageState extends State<HomePage> {
                           separatorBuilder: (_, __) => const Divider(),
                           shrinkWrap: true,
                           itemCount: movies.listOfMovies!.length,
-                          itemBuilder: (_, idx) => Image.network(
-                            API.REQUEST_IMG(
-                              movies.listOfMovies![idx].posterPath.toString(),
-                            ),
-                          ),
+                          itemBuilder: (_, idx) => CustomListCardWidget(
+                              movie: movies.listOfMovies![idx]),
                         )
                       : Container();
                 },
