@@ -19,6 +19,10 @@ class CustomListCardWidget extends StatelessWidget {
         children: [
           Image.network(
             API.REQUEST_IMG(movie.posterPath.toString()),
+            loadingBuilder: (_, child, progress) {
+              if (progress == null) return child;
+              return const CircularProgressIndicator.adaptive();
+            },
           ),
           Expanded(
             child: Padding(
