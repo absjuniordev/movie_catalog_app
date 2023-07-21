@@ -4,13 +4,11 @@ import '../repositories/movies_repository.dart';
 
 class MovieController {
   final MoviesRepository _moviesRepository;
-
   MovieController(this._moviesRepository) {
     fetch();
   }
 
   ValueNotifier<Movies?> movies = ValueNotifier<Movies?>(null);
-  //vai ser carregado mas em um momento secundario
   Movies? _cachedMovies;
 
   onChanged(String value) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movie_catolog_app/controllers/movie_controller.dart';
+import 'package:movie_catolog_app/decorators/movies_cache_repository_decoratoor.dart';
 import 'package:movie_catolog_app/models/movies_page.dart';
 import 'package:movie_catolog_app/repositories/movies_repository_imp.dart';
 import 'package:movie_catolog_app/services/dio_service_imp.dart';
@@ -15,8 +16,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final MovieController _controller = MovieController(
-    MoviesRepositoryImp(
-      DioServiceImp(),
+    MoviesCahceRepositoryDecorator(
+      MoviesRepositoryImp(
+        DioServiceImp(),
+      ),
     ),
   );
   //Depencecia = quem for usar o MovieController tera que implementar o
@@ -46,6 +49,13 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 20),
                         TextField(
                           onChanged: _controller.onChanged,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.search),
+                            fillColor: Colors.white30,
+                            focusColor: Colors.white30,
+                            hoverColor: Colors.white30,
+                          ),
+                          cursorColor: Colors.white30,
                         )
                       ],
                     ),
